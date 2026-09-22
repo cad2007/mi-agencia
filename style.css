@@ -1,0 +1,323 @@
+/* --- CONFIGURACIÓN GENERAL --- */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    background-color: #0f172a;
+    color: #f8fafc;
+    line-height: 1.6;
+}
+
+.contenedor {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* --- ENCABEZADO Y NAVEGACIÓN --- */
+.header {
+    background-color: #1e293b;
+    padding: 20px 0;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+
+.navegacion {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    font-size: 24px;
+    font-weight: bold;
+    color: #38bdf8;
+    text-decoration: none;
+}
+
+.logo span {
+    color: #ffffff;
+}
+
+.menu a {
+    color: #cbd5e1;
+    text-decoration: none;
+    margin-left: 20px;
+    transition: color 0.3s;
+}
+
+.menu a:hover {
+    color: #38bdf8;
+}
+
+.btn-menu {
+    background-color: #2563eb;
+    color: #ffffff !important;
+    padding: 8px 16px;
+    border-radius: 6px;
+}
+
+/* --- HERO (SECCIÓN PRINCIPAL) --- */
+.hero {
+    text-align: center;
+    padding: 100px 0 80px 0;
+}
+
+.hero h1 {
+    font-size: 40px;
+    margin-bottom: 20px;
+    color: #ffffff;
+}
+
+.hero p {
+    font-size: 18px;
+    color: #94a3b8;
+    max-width: 600px;
+    margin: 0 auto 30px auto;
+}
+
+.btn-principal {
+    display: inline-block;
+    background-color: #2563eb;
+    color: #ffffff;
+    padding: 14px 28px;
+    text-decoration: none;
+    font-weight: bold;
+    border-radius: 8px;
+    transition: background-color 0.3s;
+}
+
+.btn-principal:hover {
+    background-color: #1d4ed8;
+}
+
+/* --- SECCIÓN DE SERVICIOS --- */
+.servicios {
+    padding: 80px 20px;
+    text-align: center;
+}
+
+.servicios h2, .portafolio h2 {
+    font-size: 32px;
+    margin-bottom: 40px;
+}
+
+.grid-servicios {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 20px;
+}
+
+.tarjeta-servicio {
+    background-color: #1e293b;
+    padding: 30px;
+    border-radius: 12px;
+    text-align: left;
+}
+
+.tarjeta-servicio .icono {
+    font-size: 36px;
+    margin-bottom: 15px;
+}
+
+.tarjeta-servicio h3 {
+    margin-bottom: 10px;
+    color: #ffffff;
+}
+
+.tarjeta-servicio p {
+    color: #94a3b8;
+    font-size: 14px;
+}
+
+/* --- SECCIÓN DE PORTAFOLIO --- */
+.portafolio {
+    padding: 60px 20px 80px 20px;
+    text-align: center;
+}
+
+.grid-portafolio {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+}
+
+.tarjeta-proyecto {
+    background-color: #1e293b;
+    border-radius: 12px;
+    overflow: hidden;
+    text-align: left;
+}
+
+.imagen-demo {
+    background-color: #334155;
+    height: 180px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #94a3b8;
+    font-weight: bold;
+}
+
+.info-proyecto {
+    padding: 20px;
+}
+
+.info-proyecto h3 {
+    color: #ffffff;
+    margin-bottom: 8px;
+}
+
+.info-proyecto p {
+    color: #94a3b8;
+    font-size: 14px;
+}
+
+/* --- SECCIÓN CONTACTO Y FOOTER --- */
+.contacto {
+    background-color: #1e293b;
+    text-align: center;
+    padding: 80px 20px;
+}
+
+.contacto h2 {
+    margin-bottom: 15px;
+}
+
+.contacto p {
+    color: #94a3b8;
+    margin-bottom: 30px;
+}
+
+.btn-whatsapp {
+    display: inline-block;
+    background-color: #16a34a;
+    color: #ffffff;
+    padding: 14px 28px;
+    text-decoration: none;
+    font-weight: bold;
+    border-radius: 8px;
+}
+
+.footer {
+    text-align: center;
+    padding: 20px;
+    color: #64748b;
+    font-size: 14px;
+}
+/* --- ADAPTABILIDAD PARA DISPOSITIVOS MÓVILES (PANTALLAS PEQUEÑAS) --- */
+@media (max-width: 768px) {
+
+    /* 1. Ajustes del Encabezado y Navegación */
+    .navegacion {
+        flex-direction: column;
+        gap: 15px;
+    }
+
+    .menu {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 12px;
+        width: 100%;
+    }
+
+    .menu a {
+        margin-left: 0; /* Quita el margen lateral en móviles */
+    }
+
+    /* 2. Ajustes de la Sección Principal (Hero) */
+    .hero {
+        padding: 60px 0 40px 0;
+    }
+
+    .hero h1 {
+        font-size: 28px; /* Tamaño de letra más cómodo para celulares */
+    }
+
+    .hero p {
+        font-size: 16px;
+    }
+
+    /* 3. Reorganización de Cuadrículas a 1 Sola Columna */
+    .grid-servicios, 
+    .grid-portafolio {
+        grid-template-columns: 1fr; /* Muestra una tarjeta debajo de otra */
+    }
+
+    /* 4. Adaptación de Botones */
+    .btn-principal, 
+    .btn-whatsapp {
+        width: 100%; /* Los botones ocupan todo el ancho de la pantalla */
+        text-align: center;
+    }
+    /* --- ESTILOS DEL BOTÓN MENÚ HAMBURGUESA --- */
+.btn-hamburguesa {
+    display: none; /* En computadoras no se muestra */
+    background: none;
+    border: none;
+    color: #ffffff;
+    font-size: 28px;
+    cursor: pointer;
+}
+
+/* --- REGLAS MÓVILES PARA EL MENÚ DESPLEGABLE --- */
+@media (max-width: 768px) {
+    .btn-hamburguesa {
+        display: block; /* Se muestra solo en celulares */
+    }
+
+    .menu {
+        display: none; /* Por defecto está oculto en celulares */
+        width: 100%;
+        margin-top: 15px;
+    }
+
+    /* Clase que activa JavaScript cuando se hace clic en el botón */
+    .menu.activo {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 15px;
+    }
+}
+/* --- BOTÓN FLOTANTE DE WHATSAPP --- */
+.btn-whatsapp-flotante {
+    position: fixed;
+    bottom: 25px;
+    right: 25px;
+    width: 60px;
+    height: 60px;
+    background-color: #25d366;
+    color: #ffffff;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 30px;
+    text-decoration: none;
+    box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.4);
+    z-index: 999; /* Asegura que siempre quede por encima de todo el contenido */
+    transition: transform 0.3s ease, background-color 0.3s ease;
+}
+
+.btn-whatsapp-flotante:hover {
+    transform: scale(1.1); /* Efecto de aumento suave al pasar el cursor */
+    background-color: #20ba5a;
+}
+.imagen-proyecto {
+    width: 100%;
+    height: 200px;
+    object-fit: cover; /* Ajusta la imagen sin distorsionarla */
+    display: block;
+}
+}
