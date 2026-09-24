@@ -41,4 +41,48 @@ function agendarSimulacion(e) {
             toast.className = 'toast-hidden';
         }, 3000);
     }
+    // ==========================================
+// LÓGICA DEL MENÚ DIGITAL & CARRITO
+// ==========================================
+let carrito = [];
+let total = 0;
+
+function agregarAlCarrito(nombre, precio) {
+    carrito.push({ nombre, precio });
+    total += precio;
+    actualizarBarraCarrito();
+}
+
+function actualizarBarraCarrito() {
+    const cantElem = document.getElementById('cant-items');
+    const totalElem = document.getElementById('total-precio');
+    
+    if (cantElem && totalElem) {
+        cantElem.textContent = `${carrito.length} producto(s) seleccionado(s)`;
+        totalElem.textContent = `$${total.toLocaleString('es-CO')}`;
+    }
+}
+
+function enviarPedidoWhatsApp() {
+    if (carrito.length === 0) {
+        alert("Por favor selecciona al menos un producto haciendo clic en '+ Agregar'.");
+        return;
+    }
+
+    // Número de WhatsApp receptor (puedes poner tu número con código de país, ej: 573001234567)
+    const numeroTelefono = "573000000000"; 
+
+    // Construir mensaje dinámico
+    let mensaje = "¡Hola! Quisiera hacer el siguiente pedido desde el menú web:%0A%0A";
+    
+    carrito.forEach((item) => {
+        mensaje += `• ${item.nombre} - $${item.precio.toLocaleString('es-CO')}%0A`;
+    });
+
+    mensaje += `%0A*Total a Pagar:* $${total.toLocaleString('es-CO')}`;
+
+    // Abrir WhatsApp
+    const url = `https://wa.me/${numeroTelefono}?text=${mensaje}`;
+    window.open(url, '_blank');
+}
 }
