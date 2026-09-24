@@ -63,10 +63,47 @@
     <!-- Sección de Portafolio (Demos) -->
     <section id="portafolio" class="portafolio contenedor">
         <h2>Proyectos Destacados</h2>
+
+        <!-- Proyecto 1: Simulador Interactivo de Agendador de Citas -->
+        <div class="project-card">
+            <div class="project-info">
+                <h3>Agendador de Citas Móvil</h3>
+                <p>Aplicación Android desarrollada en Java y XML con almacenamiento local dinámico en JSON/SharedPreferences.</p>
+                <a href="https://github.com/tu-usuario/cita-app" target="_blank" class="btn-github">Ver Código en GitHub</a>
+            </div>
+
+            <!-- Simulador de Teléfono -->
+            <div class="phone-mockup">
+                <div class="phone-screen">
+                    <div class="app-header">
+                        <h4>Agendar Nueva Cita</h4>
+                        <small>Completa la información requerida</small>
+                    </div>
+
+                    <form id="sim-form" onsubmit="agendarSimulacion(event)">
+                        <input type="text" id="sim-nombre" placeholder="Nombre del cliente" required>
+                        <input type="text" id="sim-servicio" placeholder="Servicio o motivo" required>
+                        <input type="tel" id="sim-telefono" placeholder="Teléfono de contacto" required>
+                        
+                        <div class="datetime-row">
+                            <input type="date" id="sim-fecha" required>
+                            <input type="time" id="sim-hora" required>
+                        </div>
+
+                        <button type="submit" class="btn-sim-agendar">Confirmar y Agendar Cita</button>
+                    </form>
+
+                    <!-- Mensaje o Toast de confirmación simulado -->
+                    <div id="sim-toast" class="toast-hidden">¡Cita registrada con éxito!</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Proyectos Adicionales -->
         <div class="grid-portafolio">
             
             <div class="tarjeta-proyecto">
-               <img src="web.jpg" alt="Demo Web Restaurante" class="imagen-proyecto">
+                <img src="web.jpg" alt="Demo Web Restaurante" class="imagen-proyecto">
                 <div class="info-proyecto">
                     <h3>Menú Digital para Restaurantes</h3>
                     <p>Página web con catálogo interactivo de platillos y pedidos por WhatsApp.</p>
@@ -98,13 +135,14 @@
         <p>&copy; 2026 MiAgencia - Todos los derechos reservados.</p>
     </footer>
 
-    <script src="script.js"></script>
     <!-- Botón Flotante de WhatsApp -->
-<a href="https://wa.me/5730000000?text=Hola,%20me%20interesa%20cotizar%20un%20proyecto%20web%20o%20móvil" 
-   class="btn-whatsapp-flotante" 
-   target="_blank" 
-   aria-label="Contactar por WhatsApp">
-    💬
-</a>
+    <a href="https://wa.me/5730000000?text=Hola,%20me%20interesa%20cotizar%20un%20proyecto%20web%20o%20móvil" 
+       class="btn-whatsapp-flotante" 
+       target="_blank" 
+       aria-label="Contactar por WhatsApp">
+        💬
+    </a>
+
+    <script src="script.js"></script>
 </body>
 </html>
