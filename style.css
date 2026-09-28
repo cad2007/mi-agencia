@@ -1,4 +1,5 @@
-/* ==========================================
+
+  /* ==========================================
    1. ESTILOS GENERALES Y VARIABLES
    ========================================== */
 :root {
@@ -405,8 +406,10 @@ body {
   .project-card {
     flex-direction: column;
   }
-  /* ==========================================
-   ESTILOS DEMO MENÚ DIGITAL
+}
+
+/* ==========================================
+   9. ESTILOS DEMO MENÚ DIGITAL (para todas las pantallas)
    ========================================== */
 .menu-demo-card {
   flex-direction: column;
@@ -510,5 +513,4 @@ body {
   border-radius: 6px;
   font-weight: bold;
   cursor: pointer;
-}
 }

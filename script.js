@@ -41,8 +41,10 @@ function agendarSimulacion(e) {
             toast.className = 'toast-hidden';
         }, 3000);
     }
-    // ==========================================
-// LÓGICA DEL MENÚ DIGITAL & CARRITO
+}
+
+// ==========================================
+// 3. LÓGICA DEL MENÚ DIGITAL & CARRITO
 // ==========================================
 let carrito = [];
 let total = 0;
@@ -84,5 +86,4 @@ function enviarPedidoWhatsApp() {
     // Abrir WhatsApp
     const url = `https://wa.me/${numeroTelefono}?text=${mensaje}`;
     window.open(url, '_blank');
-}
 }
