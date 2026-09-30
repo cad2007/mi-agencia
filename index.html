@@ -1,13 +1,13 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
- <meta charset="UTF-8">
+    <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <!-- Título de la pestaña en el navegador y en Google -->
-    <title>Dseño Web & Apps | Desarrollo Web y Móvil</title>
+    <title>CADOS Web & Apps | Desarrollo Web y Móvil</title>
     
     <!-- Meta descripción para Google -->
-    <meta name="description" content="CADOS Web & Apps: Desarrollo de páginas web modernas y aplicaciones móviles a la medida. Crea tu sitio corporativo o menú digital para tu negocio.">
+    <meta name="description" content="CADOS Web & Apps:  de páginas web modernas y aplicaciones móviles a la medida. Crea tu sitio corporativo o menú digital para tu negocio.">
     
     <!-- Nombre del sitio para buscadores y redes sociales -->
     <meta property="og:site_name" content="CADOS Web & Apps">
@@ -15,10 +15,10 @@
     <meta property="og:description" content="Desarrollo de páginas web modernas y aplicaciones móviles a la medida.">
     <meta property="og:image" content="https://cad2007.github.io/mi-agencia/portada-agencia.jpg">
     <meta property="og:type" content="website">
- 
+
     <!-- 1. Ícono para la pestaña del navegador y resultado en Google -->
     <link rel="icon" type="image/png" href="favicon.png">
- 
+
     <!-- 2. Hoja de estilos -->
     <link rel="stylesheet" href="style.css">
 </head>
@@ -152,13 +152,19 @@
 
                 </div>
 
+                <!-- Lista de productos elegidos (cada uno con botón para quitarlo) -->
+                <div id="lista-carrito" class="lista-carrito"></div>
+
                 <!-- Resumen de Pedido integrado -->
                 <div class="resumen-pedido-demo">
                     <div class="info-resumen">
                         <span id="cant-items">0 productos seleccionados</span>
                         <strong id="total-precio">$0</strong>
                     </div>
-                    <button class="btn-enviar-wa" onclick="enviarPedidoWhatsApp()">Pedir por WhatsApp 💬</button>
+                    <div class="acciones-resumen">
+                        <button class="btn-vaciar" onclick="vaciarCarrito()">Vaciar</button>
+                        <button class="btn-enviar-wa" onclick="enviarPedidoWhatsApp()">Pedir por WhatsApp 💬</button>
+                    </div>
                 </div>
             </div>
         </div>
