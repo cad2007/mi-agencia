@@ -1,6 +1,6 @@
-// ==========================================
+
 // 1. INTERACCIÓN DEL MENÚ NAVEGACIÓN EN MÓVILES
-// ==========================================
+
 
 // Seleccionamos los elementos del HTML usando sus ID
 const btnMenu = document.getElementById('btn-menu');
@@ -14,9 +14,8 @@ if (btnMenu && menuNavegacion) {
     });
 }
 
-// ==========================================
+
 // 2. FUNCIONALIDAD DEL SIMULADOR DE CITAS MÓVIL
-// ==========================================
 
 function agendarSimulacion(e) {
     // Evita que la página web se recargue al enviar el formulario
@@ -43,9 +42,7 @@ function agendarSimulacion(e) {
     }
 }
 
-// ==========================================
 // 3. LÓGICA DEL MENÚ DIGITAL & CARRITO
-// ==========================================
 let carrito = [];
 let total = 0;
 
@@ -55,13 +52,52 @@ function agregarAlCarrito(nombre, precio) {
     actualizarBarraCarrito();
 }
 
+// Quita un solo producto usando su posición en la lista
+function quitarDelCarrito(indice) {
+    if (indice < 0 || indice >= carrito.length) return;
+    total -= carrito[indice].precio;
+    carrito.splice(indice, 1);
+    actualizarBarraCarrito();
+}
+
+// Borra todos los productos seleccionados
+function vaciarCarrito() {
+    carrito = [];
+    total = 0;
+    actualizarBarraCarrito();
+}
+
 function actualizarBarraCarrito() {
     const cantElem = document.getElementById('cant-items');
     const totalElem = document.getElementById('total-precio');
+    const listaElem = document.getElementById('lista-carrito');
     
     if (cantElem && totalElem) {
         cantElem.textContent = `${carrito.length} producto(s) seleccionado(s)`;
         totalElem.textContent = `$${total.toLocaleString('es-CO')}`;
+    }
+
+    // Dibuja la lista con un botón ✕ para quitar cada producto
+    if (listaElem) {
+        listaElem.innerHTML = '';
+        carrito.forEach((item, indice) => {
+            const fila = document.createElement('div');
+            fila.className = 'item-carrito';
+
+            const texto = document.createElement('span');
+            texto.textContent = `${item.nombre} - $${item.precio.toLocaleString('es-CO')}`;
+
+            const btnQuitar = document.createElement('button');
+            btnQuitar.type = 'button';
+            btnQuitar.className = 'btn-quitar';
+            btnQuitar.textContent = '✕';
+            btnQuitar.setAttribute('aria-label', `Quitar ${item.nombre}`);
+            btnQuitar.addEventListener('click', () => quitarDelCarrito(indice));
+
+            fila.appendChild(texto);
+            fila.appendChild(btnQuitar);
+            listaElem.appendChild(fila);
+        });
     }
 }
 
@@ -84,6 +120,6 @@ function enviarPedidoWhatsApp() {
     mensaje += `%0A*Total a Pagar:* $${total.toLocaleString('es-CO')}`;
 
     // Abrir WhatsApp
-    const url = `https://wa.me/${numeroTelefono}?text=${mensaje}`;
+    const url = `https://wa.me/${}?text=${3205924007}`;
     window.open(url, '_blank');
 }
